@@ -1,30 +1,6 @@
 import { motion } from "framer-motion";
 import { Shield, Apple, Monitor, Terminal, Github } from "lucide-react";
-
-const GITHUB_RELEASE = "https://github.com/leonardoReizz/aegis-vault/releases/latest";
-
-const platforms = [
-  {
-    label: "macOS (Apple Silicon)",
-    icon: Apple,
-    href: `${GITHUB_RELEASE}/download/aegis-vault_aarch64.dmg`,
-  },
-  {
-    label: "macOS (Intel)",
-    icon: Apple,
-    href: `${GITHUB_RELEASE}/download/aegis-vault_x64.dmg`,
-  },
-  {
-    label: "Windows",
-    icon: Monitor,
-    href: `${GITHUB_RELEASE}/download/aegis-vault_x64_en-US.msi`,
-  },
-  {
-    label: "Linux",
-    icon: Terminal,
-    href: `${GITHUB_RELEASE}/download/aegis-vault_amd64.deb`,
-  },
-];
+import { useReleaseAssets } from "../hooks/useReleaseAssets";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -36,6 +12,15 @@ const fadeUp = {
 };
 
 const HeroSection = () => {
+  const links = useReleaseAssets();
+
+  const platforms = [
+    { label: "macOS (Apple Silicon)", icon: Apple, href: links.macArm },
+    { label: "macOS (Intel)", icon: Apple, href: links.macIntel },
+    { label: "Windows", icon: Monitor, href: links.windows },
+    { label: "Linux", icon: Terminal, href: links.linux },
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Glow effect */}

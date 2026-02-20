@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Apple, Monitor, Terminal, Github, Download } from "lucide-react";
 import { useEffect, useState } from "react";
-
-const GITHUB_RELEASE = "https://github.com/leonardoReizz/aegis-vault/releases/latest";
+import { useReleaseAssets, ReleaseLinks } from "../hooks/useReleaseAssets";
 
 type Platform = "mac-arm" | "mac-intel" | "windows" | "linux" | null;
 
@@ -10,50 +9,51 @@ const detectPlatform = (): Platform => {
   if (typeof navigator === "undefined") return null;
   const ua = navigator.userAgent.toLowerCase();
   const platform = (navigator as any).userAgentData?.platform?.toLowerCase() ?? navigator.platform?.toLowerCase() ?? "";
-  
+
   if (ua.includes("win")) return "windows";
   if (ua.includes("linux")) return "linux";
   if (ua.includes("mac") || platform.includes("mac")) {
-    // Simple ARM detection
     if (platform.includes("arm") || ua.includes("arm")) return "mac-arm";
-    return "mac-arm"; // default to ARM for modern macs
+    return "mac-arm";
   }
   return null;
 };
 
-const downloads = [
+const getDownloads = (links: ReleaseLinks) => [
   {
     id: "mac-arm" as Platform,
     label: "macOS (Apple Silicon)",
     icon: Apple,
-    href: `${GITHUB_RELEASE}/download/aegis-vault_aarch64.dmg`,
+    href: links.macArm,
     ext: ".dmg",
   },
   {
     id: "mac-intel" as Platform,
     label: "macOS (Intel)",
     icon: Apple,
-    href: `${GITHUB_RELEASE}/download/aegis-vault_x64.dmg`,
+    href: links.macIntel,
     ext: ".dmg",
   },
   {
     id: "windows" as Platform,
     label: "Windows",
     icon: Monitor,
-    href: `${GITHUB_RELEASE}/download/aegis-vault_x64_en-US.msi`,
+    href: links.windows,
     ext: ".msi",
   },
   {
     id: "linux" as Platform,
     label: "Linux",
     icon: Terminal,
-    href: `${GITHUB_RELEASE}/download/aegis-vault_amd64.deb`,
+    href: links.linux,
     ext: ".deb",
   },
 ];
 
 const DownloadSection = () => {
   const [detected, setDetected] = useState<Platform>(null);
+  const links = useReleaseAssets();
+  const downloads = getDownloads(links);
 
   useEffect(() => {
     setDetected(detectPlatform());
