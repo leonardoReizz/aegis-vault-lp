@@ -66,9 +66,9 @@ const HeroSection = () => {
           animate="visible"
           className="max-w-xl text-lg md:text-xl text-muted-foreground mb-12 leading-relaxed"
         >
-          Suas senhas protegidas com criptografia de nível militar.
+          Your passwords protected with military-grade encryption.
           <br />
-          Simples, seguro e totalmente sob seu controle.
+          Simple, secure, and fully under your control.
         </motion.p>
 
         {/* Download buttons */}
@@ -103,7 +103,7 @@ const HeroSection = () => {
           className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
         >
           <Github className="w-4 h-4" />
-          Ver no GitHub
+          View on GitHub
         </motion.a>
       </div>
     </section>

@@ -78,10 +78,10 @@ const DownloadSection = () => {
           className="text-center mb-12"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Baixe o <span className="text-gradient">Aegis Vault</span>
+            Download <span className="text-gradient">Aegis Vault</span>
           </h2>
           <p className="text-muted-foreground max-w-md mx-auto">
-            100% gratuito, para sempre. Escolha sua plataforma e comece agora.
+            100% free, forever. Choose your platform and get started.
           </p>
         </motion.div>
 
@@ -108,7 +108,7 @@ const DownloadSection = () => {
               </span>
               {d.id === detected && (
                 <span className="text-[10px] uppercase tracking-widest text-primary font-semibold">
-                  Recomendado
+                  Recommended
                 </span>
               )}
             </motion.a>
@@ -128,7 +128,7 @@ const DownloadSection = () => {
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
           >
             <Github className="w-4 h-4" />
-            Ver todas as releases no GitHub
+            View all releases on GitHub
           </a>
         </motion.div>
       </div>

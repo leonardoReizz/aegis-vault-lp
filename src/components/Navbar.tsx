@@ -33,7 +33,7 @@ const Navbar = () => {
             href="#how-it-works"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"
           >
-            Como funciona
+            How it works
           </a>
           <a
             href="#download"

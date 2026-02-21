@@ -15,49 +15,49 @@ const features = [
     icon: ShieldCheck,
     title: "AES-256-GCM + RSA",
     description:
-      "Criptografia de nível militar com AES-256-GCM combinada com chaves RSA para máxima proteção dos seus dados.",
+      "Military-grade encryption with AES-256-GCM combined with RSA keys for maximum data protection.",
   },
   {
     icon: FolderLock,
-    title: "Múltiplos Cofres",
+    title: "Multiple Vaults",
     description:
-      "Organize suas senhas em cofres separados por contexto — trabalho, pessoal, projetos e muito mais.",
+      "Organize your passwords into separate vaults by context — work, personal, projects and more.",
   },
   {
     icon: Share2,
-    title: "Compartilhamento Seguro",
+    title: "Secure Sharing",
     description:
-      "Compartilhe cofres entre usuários usando criptografia assimétrica RSA. Só quem tem a chave acessa.",
+      "Share vaults between users using RSA asymmetric encryption. Only key holders can access.",
   },
   {
     icon: Cloud,
-    title: "Sync na Nuvem",
+    title: "Cloud Sync",
     description:
-      "Sincronização opcional por cofre. Você decide o que fica local e o que vai para a nuvem.",
+      "Optional per-vault sync. You decide what stays local and what goes to the cloud.",
   },
   {
     icon: KeyRound,
-    title: "Gerador de Senhas",
+    title: "Password Generator",
     description:
-      "Gere senhas fortes e únicas com um clique. Controle o tamanho, caracteres e complexidade.",
+      "Generate strong, unique passwords with one click. Control length, characters and complexity.",
   },
   {
     icon: Star,
-    title: "Favoritos",
+    title: "Favorites",
     description:
-      "Acesse rapidamente as credenciais que você mais usa com o sistema de favoritos integrado.",
+      "Quickly access the credentials you use most with the built-in favorites system.",
   },
   {
     icon: HardDrive,
-    title: "Backup de Chaves",
+    title: "Key Backup",
     description:
-      "Exporte e importe suas chaves privadas com segurança. Nunca perca o acesso aos seus cofres.",
+      "Securely export and import your private keys. Never lose access to your vaults.",
   },
   {
     icon: Monitor,
-    title: "Multiplataforma",
+    title: "Cross-Platform",
     description:
-      "Disponível para macOS (ARM e Intel), Windows e Linux. A mesma experiência em qualquer sistema.",
+      "Available for macOS (ARM and Intel), Windows and Linux. The same experience on any system.",
   },
 ];
 
@@ -83,11 +83,11 @@ const FeaturesSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Segurança sem <span className="text-gradient">compromisso</span>
+            Uncompromising <span className="text-gradient">security</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Cada detalhe foi pensado para manter suas senhas seguras, acessíveis
-            e sob seu controle total.
+            Every detail was designed to keep your passwords secure, accessible
+            and fully under your control.
           </p>
         </motion.div>
 

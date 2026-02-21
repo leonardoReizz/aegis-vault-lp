@@ -5,23 +5,23 @@ const steps = [
   {
     icon: UserPlus,
     step: "01",
-    title: "Crie sua conta",
+    title: "Create your account",
     description:
-      "Configure seu perfil e gere seu par de chaves criptográficas em segundos.",
+      "Set up your profile and generate your cryptographic key pair in seconds.",
   },
   {
     icon: FolderPlus,
     step: "02",
-    title: "Crie seus cofres",
+    title: "Create your vaults",
     description:
-      "Organize suas senhas em cofres separados — pessoal, trabalho, projetos.",
+      "Organize your passwords into separate vaults — personal, work, projects.",
   },
   {
     icon: Lock,
     step: "03",
-    title: "Armazene e compartilhe",
+    title: "Store and share",
     description:
-      "Salve credenciais com criptografia total e compartilhe cofres com segurança.",
+      "Save credentials with full encryption and share vaults securely.",
   },
 ];
 
@@ -40,10 +40,10 @@ const HowItWorksSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Como <span className="text-gradient">funciona</span>
+            How it <span className="text-gradient">works</span>
           </h2>
           <p className="text-muted-foreground max-w-md mx-auto">
-            Três passos simples para proteger suas senhas.
+            Three simple steps to protect your passwords.
           </p>
         </motion.div>
 

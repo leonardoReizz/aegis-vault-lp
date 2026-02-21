@@ -6,31 +6,31 @@ const roadmapItems = [
     icon: Chrome,
     title: "Google Authentication",
     description:
-      "Faca login com sua conta Google de forma rapida e segura.",
+      "Sign in with your Google account quickly and securely.",
   },
   {
     icon: ShieldCheck,
     title: "Two-Factor Authentication (2FA)",
     description:
-      "Camada extra de seguranca para proteger o acesso a sua conta.",
+      "Extra security layer to protect access to your account.",
   },
   {
     icon: ClipboardList,
     title: "Audit Log",
     description:
-      "Rastreamento completo do historico de alteracoes em cofres e credenciais.",
+      "Full change history tracking across vaults and credentials.",
   },
   {
     icon: KeyRound,
     title: "Standalone Password Generator",
     description:
-      "Use o gerador de senhas de forma independente, sem precisar criar uma entrada.",
+      "Use the password generator independently, without creating an entry.",
   },
   {
     icon: History,
     title: "Password History & Rollback",
     description:
-      "Versionamento de credenciais com a possibilidade de restaurar senhas anteriores a qualquer momento.",
+      "Version control for credentials with the ability to restore previous passwords at any time.",
   },
 ];
 
@@ -57,10 +57,10 @@ const RoadmapSection = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            O que vem <span className="text-gradient">por ai</span>
+            What's <span className="text-gradient">coming next</span>
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
-            Funcionalidades planejadas para as proximas versoes do Aegis Vault.
+            Features planned for the upcoming versions of Aegis Vault.
           </p>
         </motion.div>
 
