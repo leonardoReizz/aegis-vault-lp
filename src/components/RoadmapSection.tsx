@@ -1,0 +1,98 @@
+import { motion } from "framer-motion";
+import { History, ClipboardList, ShieldCheck, Chrome, KeyRound, Circle } from "lucide-react";
+
+const roadmapItems = [
+  {
+    icon: Chrome,
+    title: "Google Authentication",
+    description:
+      "Faca login com sua conta Google de forma rapida e segura.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Two-Factor Authentication (2FA)",
+    description:
+      "Camada extra de seguranca para proteger o acesso a sua conta.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Audit Log",
+    description:
+      "Rastreamento completo do historico de alteracoes em cofres e credenciais.",
+  },
+  {
+    icon: KeyRound,
+    title: "Standalone Password Generator",
+    description:
+      "Use o gerador de senhas de forma independente, sem precisar criar uma entrada.",
+  },
+  {
+    icon: History,
+    title: "Password History & Rollback",
+    description:
+      "Versionamento de credenciais com a possibilidade de restaurar senhas anteriores a qualquer momento.",
+  },
+];
+
+const cardVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.08, duration: 0.5, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+  }),
+};
+
+const RoadmapSection = () => {
+  return (
+    <section id="roadmap" className="py-24 md:py-32 relative">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+
+      <div className="container px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            O que vem <span className="text-gradient">por ai</span>
+          </h2>
+          <p className="text-muted-foreground max-w-lg mx-auto">
+            Funcionalidades planejadas para as proximas versoes do Aegis Vault.
+          </p>
+        </motion.div>
+
+        <div className="max-w-2xl mx-auto space-y-4">
+          {roadmapItems.map((item, i) => (
+            <motion.div
+              key={item.title}
+              custom={i}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-60px" }}
+              className="group flex items-start gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/20 transition-all duration-300"
+            >
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
+                <item.icon className="w-5 h-5 text-primary" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <Circle className="w-3 h-3 text-muted-foreground/40" />
+                  <h3 className="font-semibold text-foreground">{item.title}</h3>
+                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">
+                  {item.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default RoadmapSection;

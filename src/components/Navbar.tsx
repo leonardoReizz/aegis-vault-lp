@@ -41,6 +41,12 @@ const Navbar = () => {
           >
             Download
           </a>
+          <a
+            href="#roadmap"
+            className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+          >
+            Roadmap
+          </a>
         </div>
 
         <a
