@@ -1,18 +1,34 @@
 import { motion } from "framer-motion";
-import { History, ClipboardList, ShieldCheck, Chrome, KeyRound, Circle } from "lucide-react";
+import { History, ClipboardList, ShieldCheck, LogIn, KeyRound, Circle, CircleCheck, Globe } from "lucide-react";
 
-const roadmapItems = [
+type RoadmapItem = {
+  icon: React.ComponentType<{ className?: string }>;
+  title: string;
+  description: string;
+  done?: boolean;
+};
+
+const roadmapItems: RoadmapItem[] = [
   {
-    icon: Chrome,
+    icon: LogIn,
     title: "Google Authentication",
     description:
       "Sign in with your Google account quickly and securely.",
+    done: true,
   },
   {
     icon: ShieldCheck,
     title: "Two-Factor Authentication (2FA)",
     description:
-      "Extra security layer to protect access to your account.",
+      "TOTP-based 2FA with QR code setup and backup codes.",
+    done: true,
+  },
+  {
+    icon: KeyRound,
+    title: "Standalone Password Generator",
+    description:
+      "Full page generator with strength indicator and quick save to any entry type.",
+    done: true,
   },
   {
     icon: ClipboardList,
@@ -21,16 +37,16 @@ const roadmapItems = [
       "Full change history tracking across vaults and credentials.",
   },
   {
-    icon: KeyRound,
-    title: "Standalone Password Generator",
-    description:
-      "Use the password generator independently, without creating an entry.",
-  },
-  {
     icon: History,
     title: "Password History & Rollback",
     description:
       "Version control for credentials with the ability to restore previous passwords at any time.",
+  },
+  {
+    icon: Globe,
+    title: "Browser Extension",
+    description:
+      "Auto-fill credentials directly from the vault into your browser.",
   },
 ];
 
@@ -75,12 +91,16 @@ const RoadmapSection = () => {
               viewport={{ once: true, margin: "-60px" }}
               className="group flex items-start gap-4 p-5 rounded-xl bg-card border border-border hover:border-primary/20 transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary/20 transition-colors">
-                <item.icon className="w-5 h-5 text-primary" />
+              <div className={`w-10 h-10 rounded-lg flex items-center justify-center shrink-0 transition-colors ${item.done ? "bg-emerald-500/15 group-hover:bg-emerald-500/25" : "bg-primary/10 group-hover:bg-primary/20"}`}>
+                <item.icon className={`w-5 h-5 ${item.done ? "text-emerald-500" : "text-primary"}`} />
               </div>
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <Circle className="w-3 h-3 text-muted-foreground/40" />
+                  {item.done ? (
+                    <CircleCheck className="w-3.5 h-3.5 text-emerald-500" />
+                  ) : (
+                    <Circle className="w-3 h-3 text-muted-foreground/40" />
+                  )}
                   <h3 className="font-semibold text-foreground">{item.title}</h3>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed">

@@ -21,11 +21,12 @@ yarn dev
 
 ## Roadmap
 
-- [ ] Google Authentication — Sign in with your Google account
-- [ ] Two-Factor Authentication (2FA) — Extra security layer for account access
+- [x] Google Authentication — Sign in with your Google account
+- [x] Two-Factor Authentication (2FA) — TOTP-based with QR code setup and backup codes
+- [x] Standalone Password Generator — Full page with strength indicator and quick save to vault
 - [ ] Audit Log — Full change history tracking across vaults and entries
-- [ ] Standalone Password Generator — Use the password generator without creating an entry
 - [ ] Password History & Rollback — Version control for credentials with the ability to restore previous passwords
+- [ ] Browser Extension — Auto-fill credentials from the vault
 
 ## License
 
